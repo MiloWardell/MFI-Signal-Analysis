@@ -1,10 +1,11 @@
 # MFI Signal Analysis
 Author: Myles Wardell
+
 Version: 1.0.0
 
 ## Installation
 
-To install node modules [npm](https://www.npmjs.com/) to install app.
+To install node modules [npm](https://www.npmjs.com/) use the command.
 
 ```cmd
 npm install
@@ -28,7 +29,7 @@ port          | 3000
 defaultPeriod | 14 
 updateTickers | true
 
-- defaultPeriod: number of days used for MFI calculation
+- defaultPeriod: Number of days used for MFI calculation
 - updateTickers: false to disable database updates 
 
 SQL Config:
