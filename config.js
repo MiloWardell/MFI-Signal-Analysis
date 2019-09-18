@@ -7,7 +7,7 @@ const environment = {}
 environment.development = {
   envName: 'development',
   port: 3000,
-  intervals: ['1d'],
+  intervals: ['1d' /*, '3d', '1w', '1M' */],
   defaultPeriod: 14,
   updateTickers: true,
 

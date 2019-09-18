@@ -38,10 +38,21 @@ app.init = async function () {
     // Querry Data
     config.intervals.forEach(async resolution => {
       const querryTickers = await sql.getData(tickerSymbols, resolution)
-      const MoneyFlowIndex = MFI.calcMoneyFlowIndex(querryTickers)
+      const MoneyFlowIndex = MFI.getMoneyFlowIndex(querryTickers)
+      const accMetric = MFI.getAccuracyMetric(querryTickers)
 
       // Display the User
+      console.log('')
       console.log({ resolution: resolution })
+
+      console.log('\n-- PAST PERFORMERS --')
+      console.log(
+        accMetric.filter(item => {
+          return item.accuracy >= 80 && item.sampleSize >= 10
+        })
+      )
+
+      console.log('\n-- CURRENT SIGNALS --')
       console.log(
         MoneyFlowIndex.filter(ticker => ticker.MFI > 80 || ticker.MFI < 20)
       )
