@@ -1,11 +1,11 @@
-# MFI Signal Analysis
+# Money Flow Index Signal Analysis
 Author: Myles Wardell
 
 Version: 1.0.0
 
 ## Installation
 
-To install node modules [npm](https://www.npmjs.com/) use the command.
+To install node modules use the [npm](https://www.npmjs.com/) command.
 
 ```cmd
 npm install
@@ -18,6 +18,19 @@ npm install
 - Download NodeJS - [here](https://nodejs.org/en/)
 
 - Create MySQL server with SQL Config paramaters
+
+- Set environemnt variables to your SQL database using
+
+Mac/Linux
+```bash
+SQL_PASSWORD='yourpasswordhere'
+```
+
+
+Windows
+```cmd
+set SQL_PASSWORD=yourpasswordhere
+```
 
 ## Config
 

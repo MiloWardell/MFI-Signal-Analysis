@@ -14,7 +14,7 @@ environment.development = {
   connection: {
     host: '127.0.0.1',
     user: 'root',
-    password: '12345678',
+    password: process.env.SQL_PASSWORD,
     database: 'tickers'
   }
 }
