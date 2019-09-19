@@ -6,9 +6,9 @@ const environment = {}
 
 environment.development = {
   // Money Flow Index
-  intervals: ['1d', '3d', '4h'], // Max 3 intervals to avoid rate limit
+  intervals: ['1d' /*, '3d' , '4h' */], // Max 3 intervals to avoid rate limit
   defaultPeriod: 14,
-  updateTickers: false,
+  updateTickers: true,
 
   // Accuracy Metric
   futureCandlesLength: 5,
@@ -19,8 +19,7 @@ environment.development = {
     user: 'root',
     password: process.env.SQL_PASSWORD || '12345678',
     database: 'tickers',
-    port: 3306,
-    connectionLimit: 10
+    port: 3306
   }
 }
 
@@ -39,8 +38,7 @@ environment.production = {
     user: 'root',
     password: process.env.SQL_PASSWORD || '12345678',
     database: 'tickers',
-    port: 3306,
-    connectionLimit: 10
+    port: 3306
   }
 }
 

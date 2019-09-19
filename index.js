@@ -76,6 +76,8 @@ app.init = async function () {
     })
   } catch (err) {
     console.log(err)
+  } finally {
+    // process.exit() // TEMP SOLUTION
   }
 }
 
