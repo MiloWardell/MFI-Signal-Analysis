@@ -5,12 +5,15 @@
 const environment = {}
 
 environment.development = {
-  envName: 'development',
-  port: 3000,
+  // Money Flow Index
   intervals: ['1d' /*, '3d', '1w', '1M' */],
   defaultPeriod: 14,
   updateTickers: true,
 
+  // Accuracy Metric
+  futureCandlesLength: 5,
+
+  // MySQL Connection
   connection: {
     host: '127.0.0.1',
     user: 'root',
@@ -22,17 +25,20 @@ environment.development = {
 }
 
 environment.production = {
-  envName: 'production',
-  port: 5000,
+  // Money Flow Index
   intervals: ['1d', '3d', '1w', '1M'],
   defaultPeriod: 14,
   updateTickers: true,
 
+  // Accuracy Metric
+  futureCandlesLength: 5,
+
+  // MySQL Connection
   connection: {
-    host: '',
-    user: '',
-    password: '',
-    database: '',
+    host: '127.0.0.1',
+    user: 'root',
+    password: process.env.SQL_PASSWORD || '12345678',
+    database: 'tickers',
     port: 3306,
     connectionLimit: 10
   }

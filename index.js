@@ -46,15 +46,32 @@ app.init = async function () {
       console.log({ resolution: resolution })
 
       console.log('\n-- PAST PERFORMERS --')
-      console.log(
-        accMetric.filter(item => {
-          return item.accuracy >= 80 && item.sampleSize >= 10
-        })
-      )
+      let filteredAcc = accMetric.filter(item => {
+        return item.accuracy >= 80 && item.sampleSize >= 10
+      })
+      console.log(filteredAcc)
 
       console.log('\n-- CURRENT SIGNALS --')
+      let filteredMFI = MoneyFlowIndex.filter(
+        ticker => ticker.MFI > 80 || ticker.MFI < 20
+      )
+      console.log(filteredMFI)
+
+      console.log('\n-- CURRENT SIGNALS + PAST PERFORMERS --')
       console.log(
-        MoneyFlowIndex.filter(ticker => ticker.MFI > 80 || ticker.MFI < 20)
+        MoneyFlowIndex.filter(ticker => {
+          return (
+            (ticker.MFI > 80 || ticker.MFI < 20) &&
+            filteredAcc.map(item => item.symbol).indexOf(ticker.symbol) > -1
+          )
+        })
+      )
+      console.log(
+        filteredAcc.filter(ticker => {
+          return (
+            filteredMFI.map(item => item.symbol).indexOf(ticker.symbol) > -1
+          )
+        })
       )
     })
   } catch (err) {
