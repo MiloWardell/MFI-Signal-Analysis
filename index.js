@@ -46,13 +46,13 @@ app.init = async function () {
       console.log({ resolution: resolution })
 
       console.log('\n-- PAST PERFORMERS --')
-      let filteredAcc = accMetric.filter(item => {
+      const filteredAcc = accMetric.filter(item => {
         return item.accuracy >= 80 && item.sampleSize >= 10
       })
       console.log(filteredAcc)
 
       console.log('\n-- CURRENT SIGNALS --')
-      let filteredMFI = MoneyFlowIndex.filter(
+      const filteredMFI = MoneyFlowIndex.filter(
         ticker => ticker.MFI > 80 || ticker.MFI < 20
       )
       console.log(filteredMFI)

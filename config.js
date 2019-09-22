@@ -6,7 +6,7 @@ const environment = {}
 
 environment.development = {
   // Money Flow Index
-  intervals: ['1d' /*, '3d' , '4h' */], // Max 3 intervals to avoid rate limit
+  intervals: ['1d'], // Max 3 intervals to avoid rate limit
   defaultPeriod: 14,
   updateTickers: true,
 
