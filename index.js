@@ -73,11 +73,10 @@ app.init = async function () {
           )
         })
       )
+      sql.closeConnection()
     })
   } catch (err) {
     console.log(err)
-  } finally {
-    // process.exit() // TEMP SOLUTION
   }
 }
 
