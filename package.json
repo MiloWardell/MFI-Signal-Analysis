@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "standard",
-    "start": "node index.js"
+    "lint": "standard",
+    "start": "node index.js",
+    "test": "mocha 'tests/*.js'"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,9 @@
   },
   "homepage": "https://github.com/MiloWardell/MFI-Signal-Analysis#readme",
   "devDependencies": {
+    "chai": "*",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "*",
     "standard": "*"
   },
   "dependencies": {
